@@ -1,0 +1,17 @@
+  <div class = 'container  mt-5 '>
+  <form  class = "col-6 mx-auto card p-3 shadow-lg"method="GET" action="{% url 'passwordpage' %}">
+    <div class="mb-3">
+    <label>Password Length: <input type="number" name="length" min="4" max="50"></label><br>
+    </div>
+    <div class="mb-3">
+    <label><input type="checkbox" name="numbers"> Include Numbers</label><br></div>
+    <div class="col-sm-10"><label><input type="checkbox" name="uppercase"> Include Uppercase</label><br></div>
+    <label><input type="checkbox" name="symbols"> Include Symbols</label><br>
+
+    <button type="submit">Generate Password</button>
+</form>
+</div>
+
+{% if password %}
+    <p>Your generated password is: <strong>{{ password }}</strong></p>
+{% endif %}
